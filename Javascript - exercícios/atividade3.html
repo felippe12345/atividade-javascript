@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Manipulação do DOM</title>
+</head>
+<body>
+    <h1>Adicionar Itens à Lista</h1>
+    <input type="text" id="itemTexto" placeholder="Texto do item">
+    <br><br>
+    <label><input type="radio" name="cores" value="black" checked> Preto</label>
+    <label><input type="radio" name="cores" value="red"> Vermelho</label>
+    <label><input type="radio" name="cores" value="blue"> Azul</label>
+    <br><br>
+    <button id="addItemBtn">Adicionar Item</button>
+    <ul id="lista"></ul>
+
+    <script>
+        document.getElementById("addItemBtn").addEventListener("click", function() {
+            const itemTexto = document.getElementById("itemTexto").value;
+            const cor = document.querySelector('input[name="cores"]:checked').value;
+
+            const li = document.createElement("li");
+            li.textContent = itemTexto;
+            li.style.color = cor;
+
+            document.getElementById("lista").appendChild(li);
+        });
+    </script>
+</body>
+</html>

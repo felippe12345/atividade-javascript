@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1a - Notas com Prompt</title>
+    <style>
+        #situacao {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Média (Prompt)</h1>
+    <p>Média: <span id="media"></span></p>
+    <p>Situação: <span id="situacao"></span></p>
+    <script>
+        const nota1 = parseFloat(prompt("Informe a primeira nota:"));
+        const nota2 = parseFloat(prompt("Informe a segunda nota:"));
+        const media = (nota1 + nota2) / 2;
+
+        document.getElementById("media").innerHTML = media.toFixed(2);
+
+        const situacao = document.getElementById("situacao");
+        if (media >= 6) {
+            situacao.innerHTML = "APROVADO";
+            situacao.style.color = "blue";
+        } else {
+            situacao.innerHTML = "REPROVADO";
+            situacao.style.color = "red";
+        }
+    </script>
+</body>
+</html>
